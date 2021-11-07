@@ -3,6 +3,21 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
+import notes from '../notes';
+import LastNote from './LastNote';
+
+function NotesCollection(){
+return(notes.map(noteItem => (
+        <LastNote
+          key={noteItem.key}
+          title={noteItem.title}
+          content={noteItem.content}
+          
+        />
+      ))
+      );
+}
+
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -24,8 +39,11 @@ function App() {
   return (
     <div>
       <Header />
+       
+      
       <CreateArea onAdd={addNote} />
-      {notes.map((noteItem, index) => {
+      <NotesCollection />
+       {notes.map((noteItem, index) => {
         return (
           <Note
             key={index}
@@ -36,6 +54,8 @@ function App() {
           />
         );
       })}
+
+     
       <Footer />
     </div>
   );
