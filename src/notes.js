@@ -27,6 +27,11 @@ const notes = [
     key: 5,
     title: "Big ideas",
     content: "Eat more fruits"
+  },
+  {
+    key: 6,
+    title: "Learning",
+    content: "useEffect"
   }
 ];
 
